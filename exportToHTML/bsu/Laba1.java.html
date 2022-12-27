@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Laba1.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Laba1.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">bsu</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Vector</span><span class="s0">;</span>
+
+
+<span class="s0">public class </span><span class="s1">Laba1  {</span>
+
+
+    <span class="s0">public static void </span><span class="s1">main(String[]args) </span><span class="s0">throws </span><span class="s1">Exception {</span>
+        <span class="s0">final </span><span class="s1">String yes =</span><span class="s2">&quot;y&quot;</span><span class="s0">;</span>
+        <span class="s0">final </span><span class="s1">String no = </span><span class="s2">&quot;n&quot;</span><span class="s0">;</span>
+        <span class="s0">final </span><span class="s1">String calorie_сalculator = </span><span class="s2">&quot;-calories&quot;</span><span class="s0">;</span>
+
+        <span class="s0">try </span><span class="s1">(Scanner in = </span><span class="s0">new </span><span class="s1">Scanner(System.in)) {</span>
+            <span class="s1">Vector&lt;Food&gt; breakfast = </span><span class="s0">new </span><span class="s1">Vector &lt;Food&gt;()</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Are you hungry? Input 'y' if yes or 'n' if no.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">String choice = in.nextLine().toLowerCase()</span><span class="s0">;</span>
+
+            <span class="s0">if </span><span class="s1">(choice.equals(yes)){</span>
+
+                <span class="s0">while</span><span class="s1">(</span><span class="s0">true</span><span class="s1">){</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;What would you like for breakfast?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;Menu:</span><span class="s0">\n</span><span class="s2">- &quot;</span><span class="s1">+ Food.Cheese + </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">- &quot; </span><span class="s1">+ Food.Apple + </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">- &quot; </span><span class="s1">+ Food.Coffee + </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">- &quot;</span><span class="s1">+  Food.Tea)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">Pick something from the menu: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+                    <span class="s1">String foodName = in.nextLine()</span><span class="s0">;</span>
+                    <span class="s0">if </span><span class="s1">(foodName.equals(</span><span class="s2">&quot;Cheese&quot;</span><span class="s1">)){</span>
+                        <span class="s1">breakfast.add(</span><span class="s0">new </span><span class="s1">Cheese())</span><span class="s0">;</span>
+
+                    <span class="s1">}</span>
+                    <span class="s0">if </span><span class="s1">(foodName.equals(</span><span class="s2">&quot;Tea&quot;</span><span class="s1">)){</span>
+                        <span class="s1">breakfast.add(</span><span class="s0">new </span><span class="s1">Tea())</span><span class="s0">;</span>
+
+                    <span class="s1">}</span>
+                    <span class="s0">if </span><span class="s1">(foodName.equals(</span><span class="s2">&quot;Coffee&quot;</span><span class="s1">)){</span>
+                        <span class="s1">breakfast.add(</span><span class="s0">new </span><span class="s1">Coffee())</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">if </span><span class="s1">(foodName.equals(</span><span class="s2">&quot;Apple&quot;</span><span class="s1">)){</span>
+                        <span class="s1">breakfast.add(</span><span class="s0">new </span><span class="s1">Apple())</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+
+
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;Anything else? Input 'y' if yes or 'n' if no.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">if</span><span class="s1">(in.hasNextLine()){</span>
+                        <span class="s1">choice = in.nextLine().toLowerCase()</span><span class="s0">;</span>
+
+                    <span class="s1">}</span>
+
+
+
+                    <span class="s0">if</span><span class="s1">(choice.equals(no)){</span>
+                        <span class="s1">System.out.print(</span><span class="s2">&quot;To calculate calories input '-calories'. &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Else input 'n'.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">choice = in.nextLine().toLowerCase()</span><span class="s0">;</span>
+                        <span class="s0">if</span><span class="s1">(choice.equals(calorie_сalculator)){</span>
+                            <span class="s1">Nutritious.calculateCalories(breakfast)</span><span class="s0">;</span>
+                        <span class="s1">}</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Have a good day)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s1">}</span>
+
+                <span class="s1">}</span>
+
+
+            <span class="s1">}</span>
+            <span class="s0">else</span><span class="s1">{</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;Hope, you will visit us later)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s3">//in.close();</span>
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+
+</pre>
+</body>
+</html>
